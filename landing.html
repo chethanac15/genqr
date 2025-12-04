@@ -167,6 +167,46 @@
                 <a href="index.html" class="button button-primary">Launch GenQR</a>
             </div>
         </section>
+
+        <form id="qr-form">
+            <input id="qr-input" type="text" placeholder="Enter URL or text">
+            <input id="qr-size" type="number" value="512">
+            <select id="error-correction">
+                <option value="L">L</option>
+                <option value="M" selected>M</option>
+                <option value="Q">Q</option>
+                <option value="H">H</option>
+            </select>
+            <select id="qr-format">
+                <option value="png" selected>PNG</option>
+                <option value="svg">SVG</option>
+            </select>
+            <input id="foreground-color" type="color" value="#000000">
+            <input id="foreground-color-text" type="text" value="#000000">
+            <input id="background-color" type="color" value="#FFFFFF">
+            <input id="background-color-text" type="text" value="#FFFFFF">
+            <input id="logo-upload" type="file" accept="image/png,image/jpeg">
+            <button id="logo-remove" type="button" hidden>Remove Logo</button>
+            <span id="logo-filename" hidden></span>
+            <button id="generate-btn" type="submit">Generate QR Code</button>
+        </form>
+
+        <div id="preview-section" hidden>
+            <div id="loading-indicator" hidden>Loading...</div>
+            <div id="qr-preview"></div>
+            <button id="download-btn" disabled>Download</button>
+            <button id="copy-clipboard-btn" disabled>Copy to Clipboard</button>
+        </div>
+
+        <div id="url-preview" hidden>
+            <span id="url-hostname"></span>
+        </div>
+
+        <div id="shortlink-toggle-wrapper" hidden>
+            <input id="shortlink-toggle" type="checkbox">
+        </div>
+
+        <div id="status-message" hidden></div>
     </main>
 
     <footer class="footer">
@@ -189,6 +229,8 @@
             navLinks.classList.toggle('open');
         });
     </script>
+    <script src="./vendor-qrcode.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
 

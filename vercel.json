@@ -26,5 +26,8 @@
     {
       "src": "./vendor-qrcode.min.js"
     }
-  ]
+  ],
+  "indexHtml": {
+    "launchAppLink": "/index.html"
+  }
 }

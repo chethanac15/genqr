@@ -1,4 +1,5 @@
 # QR Code Generator
+https://genqr-faucsfcnl-chethanac15s-projects.vercel.app/index.html
 
 A production-ready, single-page QR code generator web application. Generate customizable QR codes instantly with no build step required. Fully client-side, privacy-friendly, and ready to deploy.
 

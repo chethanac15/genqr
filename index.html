@@ -3,194 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Effortless QR code generator for teams, marketers, and makers. Learn what GenQR offers before launching the app.">
+    <meta name="description" content="GenQR — Modern QR Code Generator">
     <meta property="og:title" content="GenQR — Modern QR Code Generator">
     <meta property="og:description" content="Generate, customize, and download QR codes instantly.">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GenQR — Modern QR Code Generator">
-    <meta name="twitter:description" content="Generate, customize, and download QR codes instantly.">
     <title>GenQR — QR Code Generator</title>
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero">
-        <nav class="nav">
-            <div class="logo" aria-label="GenQR logo">GenQR</div>
-            <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <div class="nav-links" role="navigation">
-                <a href="#features">Features</a>
-                <a href="#workflow">How it Works</a>
-                <a href="#use-cases">Use Cases</a>
-                <a href="contact.html">Contact</a>
-                <a href="index.html" class="button button-primary">Launch App</a>
-            </div>
-        </nav>
+    <div class="container">
+        <header>
+            <h1>GenQR</h1>
+            <a href="landing.html" class="back-link">← Back to Home</a>
+        </header>
 
-        <div class="hero-content">
-            <div class="hero-copy">
-                <p class="eyebrow">Instant, private, no sign-up</p>
-                <h1>Create high-quality QR codes in seconds.</h1>
-                <p class="subhead">
-                    GenQR is a lightweight, production-ready QR code generator. Customize colors,
-                    export PNG/SVG, embed logos, and download in one click—directly in your browser.
-                </p>
-                <div class="hero-cta">
-                    <a href="index.html" class="button button-primary">Open QR Generator</a>
-                    <a href="#features" class="button button-secondary">See what’s inside</a>
+        <main>
+            <form id="qr-form">
+                <div class="form-group">
+                    <label for="qr-input">Enter URL or Text</label>
+                    <input id="qr-input" type="text" placeholder="https://example.com or any text" required>
                 </div>
-                <div class="hero-metrics">
-                    <div>
-                        <span class="metric">1s</span>
-                        <span class="metric-label">Load time</span>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="qr-size">Size (px)</label>
+                        <input id="qr-size" type="number" min="100" max="1024" value="512">
                     </div>
-                    <div>
-                        <span class="metric">0</span>
-                        <span class="metric-label">Dependencies to install</span>
+                    <div class="form-group">
+                        <label for="error-correction">Error Correction</label>
+                        <select id="error-correction">
+                            <option value="L">L - Low</option>
+                            <option value="M" selected>M - Medium</option>
+                            <option value="Q">Q - Quartile</option>
+                            <option value="H">H - High</option>
+                        </select>
                     </div>
-                    <div>
-                        <span class="metric">∞</span>
-                        <span class="metric-label">Use cases</span>
+                    <div class="form-group">
+                        <label for="qr-format">Format</label>
+                        <select id="qr-format">
+                            <option value="png" selected>PNG</option>
+                            <option value="svg">SVG</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-            <div class="hero-preview" aria-hidden="true">
-                <div class="preview-card">
-                    <div class="preview-header">
-                        <span class="chip">Live preview</span>
-                        <span class="status-dot"></span>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="foreground-color">Foreground Color</label>
+                        <input id="foreground-color" type="color" value="#000000">
+                        <input id="foreground-color-text" type="text" value="#000000" placeholder="#000000">
                     </div>
-                    <div class="preview-body">
-                        <div class="preview-qr"></div>
-                        <div>
-                            <p class="preview-title">Custom URL QR</p>
-                            <p class="preview-text">Foreground #222222 · Background #FAF3E1 · Size 512px</p>
-                        </div>
-                    </div>
-                    <div class="preview-footer">
-                        <span>Formats: PNG · SVG</span>
-                        <span>ECC: L · M · Q · H</span>
+                    <div class="form-group">
+                        <label for="background-color">Background Color</label>
+                        <input id="background-color" type="color" value="#FFFFFF">
+                        <input id="background-color-text" type="text" value="#FFFFFF" placeholder="#FFFFFF">
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
 
-    <main>
-        <section id="features" class="section features">
-            <div class="section-heading">
-                <p class="eyebrow">Why GenQR?</p>
-                <h2>Designed for speed, accuracy, and trust.</h2>
-                <p>Everything runs locally in your browser. No tracking pixels. No uploads to third parties.</p>
-            </div>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>Customizable output</h3>
-                    <p>Pick size up to 1024px, change colors, and add center logos without leaving the page.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Multiple formats</h3>
-                    <p>Download crisp PNGs or editable SVGs. Copy straight to your clipboard for quick sharing.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Accessible & responsive</h3>
-                    <p>Keyboard-friendly, WCAG-compliant, and optimized for phones, tablets, and desktops.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>No servers required</h3>
-                    <p>Works entirely offline once loaded. Perfect for secure environments and air-gapped devices.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="workflow" class="section workflow">
-            <div class="section-heading">
-                <p class="eyebrow">Three steps</p>
-                <h2>From idea to QR code in under a minute.</h2>
-            </div>
-            <ol class="workflow-steps">
-                <li>
-                    <span class="step-number">1</span>
-                    <h3>Drop your content</h3>
-                    <p>Paste any URL or text. GenQR auto-detects domains, shows a preview, and validates input.</p>
-                </li>
-                <li>
-                    <span class="step-number">2</span>
-                    <h3>Tweak the look</h3>
-                    <p>Adjust size, error correction, colors, or embed a logo. Real-time preview keeps you on track.</p>
-                </li>
-                <li>
-                    <span class="step-number">3</span>
-                    <h3>Download & share</h3>
-                    <p>Export PNG/SVG, copy to clipboard, or print. Files are named with timestamps for easy versioning.</p>
-                </li>
-            </ol>
-        </section>
-
-        <section id="use-cases" class="section use-cases">
-            <div class="section-heading">
-                <p class="eyebrow">Flexible by design</p>
-                <h2>Popular ways teams use GenQR.</h2>
-            </div>
-            <div class="use-case-grid">
-                <article>
-                    <h3>Marketing campaigns</h3>
-                    <p>Launch posters, flyers, or packaging with branded QR codes linked to launches and promos.</p>
-                </article>
-                <article>
-                    <h3>Events & venues</h3>
-                    <p>Share schedules, menus, or Wi‑Fi logins without reprinting. Update targets anytime.</p>
-                </article>
-                <article>
-                    <h3>Product teams</h3>
-                    <p>Embed QR codes in prototypes, packaging, or docs to keep stakeholders in sync.</p>
-                </article>
-                <article>
-                    <h3>Educators & creators</h3>
-                    <p>Connect physical materials with digital tutorials, forms, or portfolios instantly.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section cta">
-            <div class="cta-card">
-                <div>
-                    <p class="eyebrow">Ready when you are</p>
-                    <h2>Open the generator and ship your first QR today.</h2>
-                    <p>GenQR is open-source, privacy-respecting, and deployable to Netlify/Vercel/GitHub Pages.</p>
+                <div class="form-group">
+                    <label for="logo-upload">Upload Logo (PNG/JPEG)</label>
+                    <input id="logo-upload" type="file" accept="image/png,image/jpeg">
+                    <button id="logo-remove" type="button" hidden>Remove Logo</button>
+                    <span id="logo-filename" hidden></span>
                 </div>
-                <a href="index.html" class="button button-primary">Launch GenQR</a>
+
+                <div id="url-preview" hidden class="url-preview">
+                    <p>URL detected: <strong id="url-hostname"></strong></p>
+                </div>
+
+                <button id="generate-btn" type="submit" class="button-primary" disabled>Generate QR Code</button>
+            </form>
+
+            <div id="preview-section" hidden class="preview-section">
+                <div id="loading-indicator" hidden class="loading">Loading...</div>
+                <div id="qr-preview" class="qr-preview"></div>
+                <div class="button-group" hidden>
+                    <button id="download-btn" class="button-secondary" disabled>Download</button>
+                    <button id="copy-clipboard-btn" class="button-secondary" disabled>Copy to Clipboard</button>
+                </div>
             </div>
-        </section>
-    </main>
 
-    <footer class="footer">
-        <p>© <span id="year"></span> GenQR. Built for fast, secure QR code generation.</p>
-        <div class="footer-links">
-            <a href="README.md" target="_blank" rel="noopener">Documentation</a>
-            <a href="#features">Features</a>
-            <a href="contact.html">Contact</a>
-            <a href="index.html">Generator</a>
-        </div>
-    </footer>
+            <div id="status-message" class="status-message" hidden></div>
 
-    <script src="./main.js"></script>
+            <div id="shortlink-toggle-wrapper" hidden>
+                <label>
+                    <input id="shortlink-toggle" type="checkbox">
+                    Generate shortlink
+                </label>
+            </div>
+        </main>
+    </div>
+
     <script src="./vendor-qrcode.min.js"></script>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        const toggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        toggle?.addEventListener('click', () => {
-            const expanded = toggle.getAttribute('aria-expanded') === 'true';
-            toggle.setAttribute('aria-expanded', String(!expanded));
-            navLinks.classList.toggle('open');
-        });
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>
 

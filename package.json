@@ -1,0 +1,19 @@
+{
+  "name": "genqr",
+  "version": "1.0.0",
+  "description": "A production-ready, single-page QR code generator web application. Generate customizable QR codes instantly with no build step required. Fully client-side, privacy-friendly, and ready to deploy.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.1",
+    "dijkstrajs": "^1.0.3",
+    "encode-utf8": "^2.0.0",
+    "playwright": "^1.57.0",
+    "terser": "^5.44.1"
+  }
+}

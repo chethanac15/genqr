@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the GenQR team for support, feature requests, or partnerships.">
+    <title>Contact | GenQR</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="contact-hero">
+        <nav class="nav">
+            <a href="landing.html" class="logo" aria-label="GenQR home">GenQR</a>
+            <div class="nav-links">
+                <a href="landing.html">Home</a>
+                <a href="index.html">Generator</a>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div>
+                <p class="eyebrow">Get in touch</p>
+                <h1>We’d love to hear from you.</h1>
+                <p class="subhead">
+                    Questions about the generator, need help deploying, or have a feature idea?
+                    Drop us a note—we typically respond within 24 hours.
+                </p>
+            </div>
+            <div class="contact-card">
+                <h2>Direct email</h2>
+                <p>Prefer to write from your inbox? Reach us anytime at:</p>
+                <a class="contact-email" href="mailto:acchethan15@gmail.com">acchethan15@gmail.com</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <section class="contact-form-section">
+            <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="name" placeholder="Your name" required>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="you@example.com" required>
+                </label>
+                <label>
+                    <span>Message</span>
+                    <textarea name="message" rows="5" placeholder="Tell us how we can help" required></textarea>
+                </label>
+                <p class="form-hint">
+                    Submissions are processed via static form handlers (Netlify-ready). Alternatively, email us directly.
+                </p>
+                <button type="submit" class="button button-primary">Send message</button>
+            </form>
+
+            <div class="contact-details">
+                <article>
+                    <h3>Response time</h3>
+                    <p>We answer most messages within one business day.</p>
+                </article>
+                <article>
+                    <h3>Support hours</h3>
+                    <p>Monday–Friday · 9:00–18:00 IST</p>
+                </article>
+                <article>
+                    <h3>Need a quick answer?</h3>
+                    <p>Email <a href="mailto:acchethan15@gmail.com">acchethan15@gmail.com</a> and we’ll follow up.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> GenQR. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="landing.html">Home</a>
+            <a href="index.html">Generator</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
